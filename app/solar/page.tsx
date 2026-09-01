@@ -79,13 +79,14 @@ export default function SolarPage() {
     setIsSubmitting(true);
     setFeedback(null);
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+    const rawUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+    const apiUrl = rawUrl.replace(/\/+$/, "");
 
     try {
       const payload = {
         ...formData,
-        land_area_sqm: Number(formData.land_area_sqm) || 0,
-        requested_capacity_kw: Number(formData.requested_capacity_kw) || 0,
+        land_area_sqm: formData.land_area_sqm === "" ? 0 : Number(formData.land_area_sqm),
+        requested_capacity_kw: formData.requested_capacity_kw === "" ? 0 : Number(formData.requested_capacity_kw),
       };
 
       const res = await fetch(`${apiUrl}/api/applicants`, {
@@ -100,7 +101,13 @@ export default function SolarPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.detail || "خطایی در ثبت اطلاعات رخ داده است.");
+        let errorMessage = "خطایی در ثبت اطلاعات رخ داده است.";
+        if (typeof data.detail === "string") {
+          errorMessage = data.detail;
+        } else if (Array.isArray(data.detail)) {
+          errorMessage = data.detail.map((err: any) => err.msg || "ورودی نامعتبر").join(" | ");
+        }
+        throw new Error(errorMessage);
       }
 
       setFeedback({
