@@ -64,7 +64,7 @@ export default function RootLayout({
 
         <footer className="mt-16 border-t border-emerald-100 bg-white/95">
           <div className="mx-auto max-w-6xl px-4 py-10">
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-4">
               <div>
                 <h3 className="mb-4 text-lg font-bold text-emerald-800">
                   Yesesco
@@ -113,6 +113,33 @@ export default function RootLayout({
                   <li>تلفن: 09356109395</li>
                   <li>ایمیل: yesesco13@gmail.com</li>
                 </ul>
+              </div>
+
+              {/* بخش نماد اعتماد در کنار تماس با ما */}
+              <div className="flex flex-col items-start">
+                <h3 className="mb-4 text-lg font-bold text-emerald-800">
+                  نماد اعتماد
+                </h3>
+                <div className="flex min-h-[120px] min-w-[120px] items-center justify-center rounded-xl border border-emerald-100 bg-white p-2 shadow-sm">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <a
+                    referrerPolicy="origin"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://trustseal.enamad.ir/?id=7128727&Code=DH8bF1a7ghYJ7iB3wDN6qZeBWWuuD5iD"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      referrerPolicy="origin"
+                      src="https://trustseal.enamad.ir/logo.aspx?id=7128727&Code=DH8bF1a7ghYJ7iB3wDN6qZeBWWuuD5iD"
+                      alt="نماد اعتماد الکترونیکی"
+                      style={{ cursor: "pointer" }}
+                      width={125}
+                      height={136}
+                      {...({ code: "DH8bF1a7ghYJ7iB3wDN6qZeBWWuuD5iD" } as any)}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
