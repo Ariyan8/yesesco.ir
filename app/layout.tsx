@@ -6,8 +6,8 @@ import type { Metadata } from "next";
 import logo1 from "../img/logo1.jpg";
 
 export const metadata: Metadata = {
-  title: "22899965",
-  description: "طراحی، اجرا و آموزش در حوزه انرژی خورشیدی و مهارت‌های تخصصی",
+  title: "یلدای سهند | احداث، آموزش و شبکه نصابان نیروگاه خورشیدی",
+  description: "طراحی، اجرا، آموزش و ارجاع پروژه‌های نیروگاه خورشیدی به نصابان مجرب سراسر کشور",
 };
 
 export default function RootLayout({
@@ -37,24 +37,30 @@ export default function RootLayout({
               </div>
             </Link>
 
-            <nav className="flex flex-wrap items-center justify-center gap-2 text-sm font-bold md:gap-3 md:text-lg">
+            <nav className="flex flex-wrap items-center justify-center gap-2 text-sm font-bold md:gap-3 md:text-base">
               <Link
                 href="/"
-                className="rounded-full px-4 py-2.5 transition hover:bg-emerald-50 hover:text-emerald-700"
+                className="rounded-full px-3 py-2 transition hover:bg-emerald-50 hover:text-emerald-700"
               >
                 صفحه اصلی
               </Link>
               <Link
                 href="/solar"
-                className="rounded-full px-4 py-2.5 transition hover:bg-emerald-50 hover:text-emerald-700"
+                className="rounded-full px-3 py-2 transition hover:bg-emerald-50 hover:text-emerald-700"
               >
-                متقاضیان نیروگاه خورشیدی
+                متقاضیان نیروگاه
               </Link>
               <Link
                 href="/academy"
-                className="rounded-full px-4 py-2.5 transition hover:bg-emerald-50 hover:text-emerald-700"
+                className="rounded-full px-3 py-2 transition hover:bg-emerald-50 hover:text-emerald-700"
               >
-                آموزشگاه یلدای سهند
+                آموزشگاه تخصصی
+              </Link>
+              <Link
+                href="/installers/register"
+                className="rounded-full border border-yellow-400/80 bg-yellow-400/20 px-4 py-2 font-black text-yellow-900 transition hover:bg-yellow-400 hover:text-slate-950"
+              >
+                همکاری و ثبت‌نام نصابان
               </Link>
             </nav>
           </div>
@@ -70,14 +76,14 @@ export default function RootLayout({
                   Yesesco
                 </h3>
                 <p className="text-sm leading-7 text-slate-600">
-                  پیمانکار تخصصی احداث نیروگاه‌های خورشیدی و ارائه‌دهنده خدمات
-                  آموزشی و مهارتی در حوزه انرژی‌های تجدیدپذیر.
+                  پیمانکار تخصصی احداث نیروگاه‌های خورشیدی، شبکه ارجاع کار به
+                  نصابان و ارائه‌دهنده آموزش‌های مهارتی در حوزه تجدیدپذیرها.
                 </p>
               </div>
 
               <div>
                 <h3 className="mb-4 text-lg font-bold text-emerald-800">
-                  لینک‌های سریع
+                  شبکه خدمات و لینک‌ها
                 </h3>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li>
@@ -90,7 +96,7 @@ export default function RootLayout({
                       href="/solar"
                       className="transition hover:text-emerald-700"
                     >
-                      متقاضیان نیروگاه خورشیدی
+                      متقاضیان احداث نیروگاه
                     </Link>
                   </li>
                   <li>
@@ -99,6 +105,22 @@ export default function RootLayout({
                       className="transition hover:text-emerald-700"
                     >
                       آموزشگاه فنی و حرفه‌ای
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/installers/register"
+                      className="font-bold text-yellow-700 transition hover:text-yellow-800"
+                    >
+                      ثبت‌نام نصابان (دریافت پروژه)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/installers/review"
+                      className="transition hover:text-emerald-700"
+                    >
+                      ثبت امتیاز و نظر درباره نصاب
                     </Link>
                   </li>
                 </ul>
@@ -115,7 +137,6 @@ export default function RootLayout({
                 </ul>
               </div>
 
-              {/* بخش نماد اعتماد در کنار تماس با ما */}
               <div className="flex flex-col items-start">
                 <h3 className="mb-4 text-lg font-bold text-emerald-800">
                   نماد اعتماد

@@ -287,6 +287,7 @@ export default function HomePage() {
             </p>
           </div>
 
+          {/* ── بخش کارت‌های اصلی ── */}
           <section className="flex flex-1 items-center py-8 md:py-12">
             <div className="w-full">
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
@@ -319,6 +320,39 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+
+          {/* ── بخش جدید: شبکه نصابان و کارفرمایان ── */}
+          <section className="my-8 rounded-3xl border border-yellow-200/80 bg-gradient-to-r from-yellow-50 via-white to-emerald-50/40 p-6 sm:p-8 md:p-10 shadow-xl shadow-yellow-500/5">
+            <div className="flex flex-col items-center justify-between gap-6 md:flex-row text-center md:text-right">
+              <div>
+                <span className="inline-flex rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-extrabold text-yellow-800 border border-yellow-400/40">
+                  شبکه سراسری مجریان خورشیدی
+                </span>
+                <h3 className="mt-3 text-2xl sm:text-3xl font-black text-slate-800">
+                  نصاب یا پیمانکار نیروگاه خورشیدی هستید؟
+                </h3>
+                <p className="mt-2 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">
+                  به جمع نصابان معتمد یلدای سهند بپیوندید تا پروژه‌های احداث در شهر و استان خود را مستقیم دریافت کنید. کارفرمایان نیز می‌توانند به کیفیت اجرای پروژه‌ها امتیاز دهند.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  href="/installers/register"
+                  className="rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black px-6 py-3.5 text-base shadow-lg shadow-yellow-500/25 transition hover:scale-[1.02]"
+                >
+                  ثبت‌نام نصاب (دریافت پروژه)
+                </Link>
+                <Link
+                  href="/installers/review"
+                  className="rounded-2xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold px-6 py-3.5 text-base transition"
+                >
+                  ثبت نظر و امتیاز نصاب
+                </Link>
+              </div>
+            </div>
+          </section>
+
         </div>
       </div>
     </main>
